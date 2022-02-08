@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import {useEffect, useState} from 'react';
+import TableCoins from "./components/TableCoins"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App =  () => {
+  const [coins,setCoins] = useState([])
+  const getData = async()=>{
+    const arregloInicial = await axios.get(process.env.REACT_APP_URL_COINS  )
+     setCoins(arregloInicial.data)
+  }
+
+     useEffect(()=>{
+      getData()
+     },[])
+
+  return <div className='container'> 
+      <div className="row">
+        <TableCoins coins={coins} />
+      </div>
+  </div>;
+};
 
 export default App;
