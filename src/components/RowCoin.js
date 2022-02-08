@@ -3,7 +3,6 @@ import './rowCoin.css'
 
 const RowCoin = ({coin,index}) => {
     const {name,logo_url,price,symbol} = coin
-    console.log(coin["1h"]);
   return (
         <tr>
             <td>{index}</td>
