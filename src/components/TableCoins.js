@@ -12,6 +12,7 @@ const TableCoins = ({coins=[]}) => {
                         <th>Img</th>
                         <th>Nombre</th>
                         <th>Price</th>
+                        <th>Change at 1Hour</th>
                     </tr>
                </thead>
                 <tbody>
