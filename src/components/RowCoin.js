@@ -10,8 +10,8 @@ const RowCoin = ({coin,index}) => {
             <td>{name} <span className='text-muted ms-3 text-uppercase'>{symbol}</span></td>
             <td>u$s {parseFloat(price).toFixed(2)}</td>
             <td>{parseFloat(coin["1h"].price_change_pct) > 0 
-            ? <p className='text-success'>{coin["1h"].price_change_pct}</p>
-            : <p className='text-danger'>{coin["1h"].price_change_pct}</p>}</td>
+            ? <p className='text-success'>{(parseFloat(coin["1h"].price_change_pct)).toFixed(3)}%</p>
+            : <p className='text-danger'>{(parseFloat(coin["1h"].price_change_pct).toFixed(3))}%</p>}</td>
         </tr>
     )
 };

@@ -1,42 +1,31 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+import Header from './components/Header';
 import TableCoins from "./components/TableCoins"
 
 
 const App =  () => {
   const [coins,setCoins] = useState([]);
-  const [search,setSearch] = useState({
-    loading: true,
-    text: ""
-  })
+  const [search,setSearch] = useState("")
   const getData = async()=>{
-    const arregloInicial = await axios.get(process.env.REACT_APP_URL_COINS  )
+
+    const arregloInicial = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_URL_COINS}&per-page=100&interval=1h`  )
      setCoins(()=>{
        return arregloInicial.data.filter(coin=>{
-         return (search.text !== "" ) ? coin.name.toUpperCase().startsWith(search.text) : arregloInicial.data;
+         return (search !== "" ) ? coin.name.toUpperCase().startsWith(search) : arregloInicial.data;
        })
      })
   }
-    useEffect(()=>{
-      if(coins.length !== 0){
-       setSearch({
-         ...search,
-         loading:false
-       }) 
-      }
-    },[coins])
 
-    useEffect(()=>{
-    getData()
+    useEffect(()=>{ 
+      getData()
     },[search])
 
   return <div className='container'> 
+      <Header/>
       <div className="row">
-        <input type="text" onChange={e => setSearch({
-          ...search,
-          text:e.target.value.toUpperCase()
-        })} placeholder='Buscar Criptomonedas' className='form-control bg-dark text-light border-0 mt-4 text-center' />
-        {search.loading ? (<div className='alert alert-info text-center'>Loanding....</div>) : <TableCoins coins={coins} />}
+        <input type="text" onChange={e => setSearch(e.target.value.toUpperCase())} placeholder='Buscar Criptomonedas' className='mt-0 form-control bg-dark text-light border-0  text-center' />
+         <TableCoins coins={coins} />
         
       </div>
   </div>;
