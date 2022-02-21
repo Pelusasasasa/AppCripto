@@ -1,34 +1,12 @@
-import axios from 'axios';
-import {useEffect, useState} from 'react';
-import Header from './components/Header';
-import TableCoins from "./components/TableCoins"
+import React from 'react'
+import Home from "./components/Home"
+import NavBar from './NavBar'
+const App = () => {
+  return (
+    <div>
+      <NavBar/>
+    </div>
+  )
+}
 
-
-const App =  () => {
-  const [coins,setCoins] = useState([]);
-  const [search,setSearch] = useState("")
-  const getData = async()=>{
-
-    const arregloInicial = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${process.env.REACT_APP_URL_COINS}&per-page=100&interval=1h`  )
-     setCoins(()=>{
-       return arregloInicial.data.filter(coin=>{
-         return (search !== "" ) ? coin.name.toUpperCase().startsWith(search) : arregloInicial.data;
-       })
-     })
-  }
-
-    useEffect(()=>{ 
-      getData()
-    },[search])
-
-  return <div className='container'> 
-      <Header/>
-      <div className="row">
-        <input type="text" onChange={e => setSearch(e.target.value.toUpperCase())} placeholder='Buscar Criptomonedas' className='mt-0 form-control bg-dark text-light border-0  text-center' />
-         <TableCoins coins={coins} />
-        
-      </div>
-  </div>;
-};
-
-export default App;
+export default App
