@@ -8,10 +8,20 @@ span{
     font-size: 20px;
 }
 
-button{
+
+.boton{
     margin-top: 200px ;
+    border-radius: 75px;
+    border: none;
+    background-color: lightgrey;
+    padding: 20px;
+}
+
+.boton:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .img{
-    width: 150px;
+    width: 120px;
 }

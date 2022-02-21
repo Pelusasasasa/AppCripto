@@ -4,10 +4,10 @@ import { Link, useParams } from 'react-router-dom'
 import "./coin.css"
 import RowPriceCoin from './RowPriceCoin'
 const Coin = (params) => {
-  //BTC
+  const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
   const {id} = useParams();
   const getDataCoin = async(id)=>{
-    const coin = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=af9c7b5f652aaaded4073fa356098a13986ee1d9&ids=${id}&interval=1h,1d,7d,30d`  )
+    const coin = await axios.get(`https://api.nomics.com/v1/currencies/ticker?key=${REACT_APP_API_KEY}&ids=${id}&interval=1h,1d,7d,30d`  )
     setData(coin.data[0])
   }
   const [data, setData] = useState("");
@@ -40,7 +40,7 @@ const Coin = (params) => {
              {data !== "" && <RowPriceCoin price={price} hour={data["1h"]} week={data["7d"]} month = {data["30d"]} day={data["1d"]}/>}
            </tbody>
           </table>
-          <button ><Link className='back text-black' to="/">Volver</Link></button>
+          <button className='boton' ><Link className='back text-black' to="/">Volver</Link></button>
         </section>
     </div>
   )
