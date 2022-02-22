@@ -24,8 +24,8 @@ const App =  () => {
 
   return <div className='container'> 
       <Header/>
-      <div className="row">
-        <input type="text" onChange={e => setSearch(e.target.value.toUpperCase())} placeholder='Buscar Criptomonedas' className='mt-0 form-control bg-dark text-light border-0  text-center' />
+      <div className="row d-flex justify-content-center">
+        <input  type="text"  onChange={e => setSearch(e.target.value.toUpperCase())} placeholder='Buscar Criptomonedas' className='bg-opacity-75 mt-0 form-control bg-info text-light border-0 w-50  text-center' />
          <TableCoins coins={coins} />
         
       </div>
