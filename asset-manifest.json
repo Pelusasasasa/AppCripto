@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AppCripto/static/css/main.496683fe.css",
+    "main.js": "/AppCripto/static/js/main.8ede3bef.js",
+    "index.html": "/AppCripto/index.html",
+    "main.496683fe.css.map": "/AppCripto/static/css/main.496683fe.css.map",
+    "main.8ede3bef.js.map": "/AppCripto/static/js/main.8ede3bef.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.496683fe.css",
+    "static/js/main.8ede3bef.js"
+  ]
+}
