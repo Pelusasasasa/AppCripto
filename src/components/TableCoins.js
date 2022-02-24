@@ -4,7 +4,7 @@ import RowCoin from './RowCoin';
 
 const TableCoins = ({coins=[]}) => {
   return (
-             <table className='table table-dark mt-4 table-hover'>
+             <table className=''>
                <thead>
                     <tr>
                         <th>Pos</th>

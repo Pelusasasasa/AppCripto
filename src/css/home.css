@@ -1,0 +1,55 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.home input{
+    width: 50%;
+    padding: 10px;
+    border: 3px solid lightblue;
+    margin-bottom: 10px;
+}
+.home input:hover{
+    border: 3px solid lightblue;
+}
+
+.home table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.home table thead tr{
+    font-size: 25px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    /* border: .1px solid black; */
+}
+
+.home table tbody tr:nth-child(EVEN){
+    background-color: rgba(0,0,0,0.7);
+}
+
+.home table tbody tr:nth-child(ODD){
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+.home table td{
+    text-align: center;
+}
+
+.home table td span{
+    color: rgba(255,255,255,.3)
+}
+
+.home table td .red{
+    color: rgba(255, 0, 0, 1)
+}
+
+.home table td .green{
+    color: rgb(0, 255, 0)
+}

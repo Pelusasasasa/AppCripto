@@ -1,13 +1,15 @@
 import React from 'react'
-import "./header.css";
+
+
+import "../css/header.css";
 
 const Header = () => {
   return (
-    <div className='bg-dark bg-gradient text-white text-center mt-5'>
+    <header className='header'>
         <h1 >App Cripto</h1>
 
         <h3>Simple application of the most important cryptocurrencies</h3>
-    </div>
+    </header>
   )
 }
 

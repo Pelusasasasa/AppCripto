@@ -6,11 +6,11 @@ const RowPriceCoin = ({price,hour,month,day,week}) => {
   return (
     <>
         <tr>
-       <td className='text-center'>{parseFloat(price).toFixed(2)}</td>
-       <td className='text-center'>{parseFloat(hour.price_change_pct)>0 ? <p className='text-success'>{(parseFloat(hour.price_change_pct)).toFixed(3)}%</p> : <p className='text-danger'>{(parseFloat(hour.price_change_pct).toFixed(3))}%</p>}</td>
-       <td className='text-center'>{parseFloat(day.price_change_pct)>0 ? <p className='text-success'>{(parseFloat(day.price_change_pct)).toFixed(3)}%</p> : <p className='text-danger'>{(parseFloat(day.price_change_pct).toFixed(3))}%</p>}</td>
-       <td className='text-center'>{parseFloat(week.price_change_pct)>0 ? <p className='text-success'>{(parseFloat(week.price_change_pct)).toFixed(3)}%</p> : <p className='text-danger'>{(parseFloat(week.price_change_pct).toFixed(3))}%</p>}</td>
-       <td className='text-center'>{parseFloat(month.price_change_pct)>0 ? <p className='text-success'>{(parseFloat(month.price_change_pct)).toFixed(3)}%</p> : <p className='text-danger'>{(parseFloat(month.price_change_pct).toFixed(3))}%</p>}</td>
+       <td className=''>{parseFloat(price).toFixed(2)}</td>
+       <td className=''>{parseFloat(hour.price_change_pct)>0 ? <p className=''>{(parseFloat(hour.price_change_pct)).toFixed(3)}%</p> : <p className=''>{(parseFloat(hour.price_change_pct).toFixed(3))}%</p>}</td>
+       <td className=''>{parseFloat(day.price_change_pct)>0 ? <p className=''>{(parseFloat(day.price_change_pct)).toFixed(3)}%</p> : <p className=''>{(parseFloat(day.price_change_pct).toFixed(3))}%</p>}</td>
+       <td className=''>{parseFloat(week.price_change_pct)>0 ? <p className=''>{(parseFloat(week.price_change_pct)).toFixed(3)}%</p> : <p className=''>{(parseFloat(week.price_change_pct).toFixed(3))}%</p>}</td>
+       <td className=''>{parseFloat(month.price_change_pct)>0 ? <p className=''>{(parseFloat(month.price_change_pct)).toFixed(3)}%</p> : <p className=''>{(parseFloat(month.price_change_pct).toFixed(3))}%</p>}</td>
          </tr>
     </>
   )

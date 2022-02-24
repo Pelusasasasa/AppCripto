@@ -2,10 +2,13 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import Header from './Header';
 import TableCoins from "./TableCoins";
+
+import "../css/home.css"
 // require('dotenv').config();
 const App =  () => {
   
   const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY
+  console.log(process.env)
   const [coins,setCoins] = useState([]);
   const [search,setSearch] = useState("")
   const getData = async()=>{
@@ -24,8 +27,8 @@ const App =  () => {
 
   return <div className='container'> 
       <Header/>
-      <div className="row d-flex justify-content-center">
-        <input  type="text"  onChange={e => setSearch(e.target.value.toUpperCase())} placeholder='Buscar Criptomonedas' className='bg-opacity-75 mt-0 form-control bg-info text-light border-0 w-50  text-center' />
+      <div className="home">
+        <input  type="text"  onChange={e => setSearch(e.target.value.toUpperCase())} placeholder='Buscar Criptomonedas' className='' />
          <TableCoins coins={coins} />
         
       </div>

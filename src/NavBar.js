@@ -7,8 +7,8 @@ const NavBar = () => {
     <Router>
         <div>
             <Routes>
-                <Route path='/:id' element={<Coin/>} />
-                <Route path="/" element={<Home/>} />
+                <Route path="/AppCripto" element={<Home/>} />
+                <Route path='/AppCripto/:id' element={<Coin/>} />
             </Routes>
         </div>
     </Router>
